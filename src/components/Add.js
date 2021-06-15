@@ -20,7 +20,7 @@ class Add extends Component {
         e.preventDefault();    
         // console.log(this.state)
         this.props.addVechile(this.state)
-        // this.props.history.push('/')
+        this.props.history.push('/view')
         let form= document.getElementById('form')
         if(form.style.display=="none"){
             form.style.display="block"
@@ -30,12 +30,14 @@ class Add extends Component {
     }
 
     addVechile=(e)=>{
-        e.preventDefault();
+        // e.preventDefault();
         let form= document.getElementById('form')
         if(form.style.display=="none"){
-            form.style.display="block"
+            form.style.display="inline-flex"
+            // form.style.display="block"
         }else{
-            form.style.display="block"
+            form.style.display="inline-flex"
+            // form.style.display="block"
         }
 
 
@@ -43,9 +45,9 @@ class Add extends Component {
     
     render() {
         return (
-            <div>
+            <div >
                 <button type="button" className="btn btn-dark" onClick={this.addVechile}>Add Vechile</button>
-                <form className="row g-3" id="form" onSubmit={this.handleSubmit}>
+                <form className="row g-3 " id="form" onSubmit={this.handleSubmit}>
                     <div className="col-md-6">
                         <label for="model_name" className="form-label">Model Name</label>
                         <input type="text" className="form-control" id="model_name" required onChange={this.handleChange}/>
@@ -70,7 +72,7 @@ class Add extends Component {
                         <label for="sales_units" className="form-label">Sales unit in FY20-21</label>
                         <input type="text" className="form-control" id="sales_units" required onChange={this.handleChange}/>
                     </div>   
-                    <button type="submit" className="btn btn-info col-md-4 offset-md-4 justify-content-center">Login</button>
+                    <button type="submit" className="btn btn-info justify-content-center">Login</button>
                 </form>
             </div>
         )
