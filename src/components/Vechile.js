@@ -32,7 +32,7 @@ const mapStateToProps=(state,ownProps)=>{
     console.log(id)
     return{
         vechile: state.vechileInfo.find(vechile=>{
-            return vechile.id===id
+            return vechile.id==id
         })
     }
 }

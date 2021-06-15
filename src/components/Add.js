@@ -28,11 +28,23 @@ class Add extends Component {
             form.style.display="none"
         }
     }
+
+    addVechile=(e)=>{
+        e.preventDefault();
+        let form= document.getElementById('form')
+        if(form.style.display=="none"){
+            form.style.display="block"
+        }else{
+            form.style.display="block"
+        }
+
+
+    }
     
     render() {
         return (
             <div>
-                
+                <button type="button" className="btn btn-dark" onClick={this.addVechile}>Add Vechile</button>
                 <form className="row g-3" id="form" onSubmit={this.handleSubmit}>
                     <div className="col-md-6">
                         <label for="model_name" className="form-label">Model Name</label>
